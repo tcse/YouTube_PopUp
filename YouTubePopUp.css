@@ -2,8 +2,8 @@
 
 /*
     Name: YouTubePopUp
-    Description: jQuery plugin to display YouTube video in PopUp, responsive and retina, easy to use.
-    Version: 1.0.0
+    Description: jQuery plugin to display YouTube or Vimeo video in PopUp, responsive and retina, easy to use.
+    Version: 1.0.1
     Plugin URL: http://wp-time.com/youtube-popup-jquery-plugin/
     Written By: Qassim Hassan
     Twitter: @QQQHZ
@@ -22,8 +22,11 @@
     background-color:rgba(0,0,0,0.8);
     top:0;
     left:0;
-    opacity: 0;
     z-index:9999999999999;
+}
+
+.YouTubePopUp-animation{
+    opacity: 0;
     -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
     -webkit-animation-fill-mode: both;
@@ -115,7 +118,7 @@ body.logged-in .YouTubePopUp-Wrap{ /* For WordPress */
     margin:auto 0;
     width:24px;
     height:24px;
-    background:url(close.png) no-repeat;
+    background:url(../images/close.png) no-repeat;
     background-size:24px 24px;
     -webkit-background-size:24px 24px;
     -moz-background-size:24px 24px;
