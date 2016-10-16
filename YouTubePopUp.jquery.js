@@ -1,15 +1,15 @@
 /*
-	Name: YouTubePopUp
-	Description: jQuery plugin to display YouTube or Vimeo video in PopUp, responsive and retina, easy to use.
-	Version: 1.0.0
+    Name: YouTubePopUp
+    Description: jQuery plugin to display YouTube or Vimeo video in PopUp, responsive and retina, easy to use.
+    Version: 1.0.2
     Plugin URL: http://wp-time.com/youtube-popup-jquery-plugin/
-	Written By: Qassim Hassan
-	Twitter: @QQQHZ
-	Websites: wp-time.com | qass.im | wp-plugins.in
-	Dual licensed under the MIT and GPL licenses:
-		http://www.opensource.org/licenses/mit-license.php
-		http://www.gnu.org/licenses/gpl.html
-	Copyright (c) 2016 - Qassim Hassan
+    Written By: Qassim Hassan
+    Twitter: @QQQHZ
+    Websites: wp-time.com | qass.im | wp-plugins.in
+    Dual licensed under the MIT and GPL licenses:
+        http://www.opensource.org/licenses/mit-license.php
+        http://www.gnu.org/licenses/gpl.html
+    Copyright (c) 2016 - Qassim Hassan
 */
 
 (function ( $ ) {
@@ -51,8 +51,13 @@
                 var videoEmbedLink = "https://player.vimeo.com/video/"+cleanVideoID+"?autoplay="+YouTubePopUpOptions.autoplay+"";
             }
 
-            $("body").append('<div class="YouTubePopUp-Wrap"><div class="YouTubePopUp-Content"><span class="YouTubePopUp-Close"></span><iframe src="'+videoEmbedLink+'" allowfullscreen></iframe></div></div>');
+            $("body").append('<div class="YouTubePopUp-Wrap YouTubePopUp-animation"><div class="YouTubePopUp-Content"><span class="YouTubePopUp-Close"></span><iframe src="'+videoEmbedLink+'" allowfullscreen></iframe></div></div>');
 
+            if( $('.YouTubePopUp-Wrap').hasClass('YouTubePopUp-animation') ){
+                setTimeout(function() {
+                    $('.YouTubePopUp-Wrap').removeClass("YouTubePopUp-animation");
+                }, 600);
+            }
 
             $(".YouTubePopUp-Wrap, .YouTubePopUp-Close").click(function(){
                 $(".YouTubePopUp-Wrap").addClass("YouTubePopUp-Hide").delay(515).queue(function() { $(this).remove(); });
