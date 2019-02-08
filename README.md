@@ -3,13 +3,54 @@
 Исходный плагин, перенесен в структуру папок шаблона DLE.
 
 ## Что в комплекте:
-- папка DLE-CMS содержит готовый набор для добавления в свой шаблон.
-- папка original содержит исходную версию модуля.
+- папка [DLE-CMS] содержит готовый набор для добавления в свой шаблон.
+- папка [original] содержит исходную версию модуля.
 
 
 ## Улучшения 
 1. Добавлен ключ ?rel=0 
 для запрета отображения чужих роликов в качестве похожих видео.
+
+
+## Установка в DLE 
+
+1. Загрузить содержимое папки DLE-CMS/tempaltes/{THEME} в ваш шаблон на сайте.
+
+2. В файле *main.tpl* найти место подключения jQuery, напоминаю, что он уже есть в любой версии DLE.
+Обычно он загружается переменной *{jsfiles}{AJAX}* если скрипты вынесены в коней файла.
+
+Или перед закрывающим тегом 
+
+    </body>
+    
+Если используется классический способ подключения стилей и JS.     
+
+После jQuery Вставить:
+
+    {* YouTube_PopUp *}
+    <link rel="stylesheet" type="text/css" href="{THEME}/assets/youtubepopup/YouTubePopUp.css">
+    <script type="text/javascript" src="{THEME}/assets/youtubepopup/YouTubePopUp.jquery.js"></script>
+    <script type="text/javascript">
+      jQuery(function(){
+          jQuery("a.bla-1").YouTubePopUp();
+          jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+      });
+    </script>
+
+3. В шаблоне RSS информера informet.tpl для загрузки роликов по клику на картинку-превью с ютуба
+использовать код
+
+    <a class="bla-1" href="{link}">
+	    <img class="img-responsive" src="{image-1}" alt="" title="Смотрите видео: {news}">
+	</a>
+
+Где класс bla-1 - открытие модального окна с автоматическим запусков видео,
+а класс bla-2 - открытие окна с отключенным автозапуском видео.
+
+
+### DEMO  для DLE
+https://chuyakov.ru/#demoVideo 
+
 
 
 
