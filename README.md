@@ -1,3 +1,18 @@
+# YouTube PopUp jQuery Plugin Для DataLife Engine
+Доработка плагина для использования в шаблона DLE CMS. Например для RSS информеров в которых используются ссылки на youtube ролики.
+Исходный плагин, перенесен в структуру папок шаблона DLE.
+
+## Что в комплекте:
+- папка DLE-CMS содержит готовый набор для добавления в свой шаблон.
+- папка original содержит исходную версию модуля.
+
+
+## Улучшения 
+1. Добавлен ключ ?rel=0 
+для запрета отображения чужих роликов в качестве похожих видео.
+
+
+
 # YouTube PopUp jQuery Plugin
 jQuery plugin to display YouTube video or Vimeo video in PopUp, responsive &amp; retina, Compatible with WordPress, Autoplay support, easy to use.
 
