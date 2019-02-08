@@ -47,6 +47,24 @@
 Где класс bla-1 - открытие модального окна с автоматическим запусков видео,
 а класс bla-2 - открытие окна с отключенным автозапуском видео.
 
+4. Если же необходимо добавить запуск окна с плеером YouTube для всех ссылок на сайте, которые ведут на https://www.youtube.com/ тогда добавьте
+
+	$('a[href^="https://www.youtube.com/"]').addClass("bla-2");
+	
+	
+и получиться что-то вроде
+
+	{* YouTube_PopUp *}
+	<link rel="stylesheet" type="text/css" href="{THEME}/assets/youtubepopup/YouTubePopUp.css">
+	<script type="text/javascript" src="{THEME}/assets/youtubepopup/YouTubePopUp.jquery.js"></script>
+	<script type="text/javascript">
+		$('a[href^="https://www.youtube.com/"]').addClass("bla-2");
+		jQuery(function(){
+		  jQuery("a.bla-1").YouTubePopUp();
+		  jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+		});
+	</script>
+
 
 ### DEMO  для DLE
 https://chuyakov.ru/#demoVideo 
