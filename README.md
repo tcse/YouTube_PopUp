@@ -49,7 +49,8 @@
 
 4. Если же необходимо добавить запуск окна с плеером YouTube для всех ссылок на сайте, которые ведут на https://www.youtube.com/ тогда добавьте
 
-	$('a[href^="https://www.youtube.com/"]').addClass("bla-2");
+
+		$('a[href^="https://www.youtube.com/"]').addClass("bla-2");
 	
 	
 и получиться что-то вроде
