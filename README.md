@@ -50,7 +50,7 @@
 4. Если же необходимо добавить запуск окна с плеером YouTube для всех ссылок на сайте, которые ведут на https://www.youtube.com/ тогда добавьте
 
 
-		$('a[href^="https://www.youtube.com/"]').addClass("bla-2");
+		$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
 	
 	
 и получиться что-то вроде
@@ -59,12 +59,18 @@
 	<link rel="stylesheet" type="text/css" href="{THEME}/assets/youtubepopup/YouTubePopUp.css">
 	<script type="text/javascript" src="{THEME}/assets/youtubepopup/YouTubePopUp.jquery.js"></script>
 	<script type="text/javascript">
-		$('a[href^="https://www.youtube.com/"]').addClass("bla-2");
+		$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
 		jQuery(function(){
 		  jQuery("a.bla-1").YouTubePopUp();
 		  jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
 		});
 	</script>
+
+Пояснение: 
+- Сылка вида https://www.youtube.com/watch? - отвечает за формирование адреса на страницу с конкретным роликом.
+- Ссылка вида https://www.youtube.com/channel/ - вывод роликов с определенногок анала (для работы скрипта отображения в модальном окне не подходит)
+- Ссылка вида https://www.youtube.com/playlist? - вывод плейлиста.
+
 
 
 ### DEMO  для DLE
